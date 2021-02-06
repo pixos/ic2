@@ -5,6 +5,15 @@ IC2 (ʌɪ siː kjuːb) aims to design and develop an autonomous and distributed 
 
 ## Essential Components
 
+### Data delivery
+
+* Data type
+  * Metadata
+  * File
+  * Streaming (over datagram)
+  * Message
+  * Package (archive of files)
+
 ### AAA: Authentication, Authorization, and Accounting
 
 * Granularity
