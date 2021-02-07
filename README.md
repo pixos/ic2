@@ -20,6 +20,18 @@ IC2 (ʌɪ siː kjuːb) aims to design and develop an autonomous and distributed 
   * Multicast
   * Broadcast
 
+### ID & Locator
+
+* ID
+  * Person
+  * Device
+  * Connection
+  * Flow
+  * Data
+  * Packet
+* Locator
+  * Device or person to deliver data
+
 ### AAA: Authentication, Authorization, and Accounting
 
 * Granularity
