@@ -14,6 +14,12 @@ IC2 (ʌɪ siː kjuːb) aims to design and develop an autonomous and distributed 
   * Message
   * Package (archive of files)
 
+* Communication type
+  * Unidirectional unicast
+  * Bidirectional unicast
+  * Multicast
+  * Broadcast
+
 ### AAA: Authentication, Authorization, and Accounting
 
 * Granularity
