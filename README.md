@@ -2,6 +2,20 @@
 
 IC2 (ʌɪ siː kjuːb) aims to design and develop an autonomous and distributed infrastructure for information, communication, and computation.
 
+In IC2, security is a fundamental concept behind all components as shown in the following figure.
+
+    +--------------------------------------------+
+    | Security                                   |
+    |                                            |
+    | +---------------+                          |
+    | | Information   |                          |
+    | +---------------+                          |
+    | +---------------+ +---------------+        |
+    | | Communication | | Computation   |        |
+    | +---------------+ +---------------+        |
+    +--------------------------------------------+
+
+
 
 ## Essential Components
 
