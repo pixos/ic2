@@ -1,0 +1,36 @@
+digraph graph_name {
+
+  root [ label = "Internet" ];
+  comm [ label = "Data communication" ];
+  comm_push [ label = "Push" ];
+  comm_pull [ label = "Pull" ];
+  file [ label = "File" ];
+  object [ label = "Object" ];
+  message [ label = "Message" ];
+  packet [ label = "Packet" ];
+
+  adu [ label = "Application Data Unit" ];
+  pdu [ label = "Protocol Data Unit" ];
+
+  id [ label = "ID" ];
+  locator [ label = "Locator" ];
+
+  cplane [ label = "Control plane" ];
+  dplane [ label = "Data plane" ];
+
+  policy [ label = "Policy" ];
+  mechanism [ label = "Mechanism" ];
+
+  root -> adu;
+  adu -> pdu;
+  adu -> file;
+  adu -> object;
+  adu -> message;
+  pdu -> packet;
+
+  root -> comm;
+  comm -> comm_push;
+  comm -> comm_pull;
+
+}
+
