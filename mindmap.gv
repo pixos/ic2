@@ -21,6 +21,13 @@ digraph graph_name {
   policy [ label = "Policy" ];
   mechanism [ label = "Mechanism" ];
 
+  model [ label = "Model" ];
+  directto [ label = "direct-to" ];
+  puton [ label = "put-on" ];
+
+  email [ label = "E-mail" ];
+  slack [ label = "Slack post" ];
+
   root -> adu;
   adu -> pdu;
   adu -> file;
@@ -31,6 +38,12 @@ digraph graph_name {
   root -> comm;
   comm -> comm_push;
   comm -> comm_pull;
+
+  comm -> model;
+  model -> directto;
+  model -> puton;
+  directto -> email;
+  puton -> slack;
 
 }
 
