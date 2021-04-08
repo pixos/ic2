@@ -21,12 +21,21 @@ digraph graph_name {
   policy [ label = "Policy" ];
   mechanism [ label = "Mechanism" ];
 
-  model [ label = "Model" ];
+  model [ label = "Messaging model" ];
+  pattern [ label = "Communication pattern" ];
   directto [ label = "direct-to" ];
   puton [ label = "put-on" ];
 
   email [ label = "E-mail" ];
+  mailinglist [ label = "Mailing list" ];
   slack [ label = "Slack post" ];
+  slackdm [ label = "Slack DM" ];
+
+  pubsub [ label = "Pub/Sub" ];
+  unicast [ label = "Unicast" ];
+  multicast [ label = "Multicast" ];
+  broadcast [ label = "Broadcast" ];
+  anycast [ label = "Anycast" ];
 
   root -> adu;
   adu -> pdu;
@@ -43,7 +52,16 @@ digraph graph_name {
   model -> directto;
   model -> puton;
   directto -> email;
+  directto -> slackdm;
   puton -> slack;
+  puton -> mailinglist;
+
+  comm -> pattern;
+  pattern -> pubsub;
+  pattern -> unicast;
+  pattern -> mutlicast;
+  pattern -> broadcast;
+  pattern -> anycast;
 
 }
 
