@@ -12,6 +12,8 @@ digraph graph_name {
   adu [ label = "Application Data Unit" ];
   pdu [ label = "Protocol Data Unit" ];
 
+  space [ label = "Space" ];
+
   id [ label = "ID" ];
   locator [ label = "Locator" ];
 
@@ -20,6 +22,10 @@ digraph graph_name {
 
   policy [ label = "Policy" ];
   mechanism [ label = "Mechanism" ];
+
+  authentication [ label = "Authentication" ];
+  authorization [ label = "Authorization" ];
+  accounting [ label = "Accounting" ];
 
   model [ label = "Messaging model" ];
   pattern [ label = "Communication pattern" ];
@@ -30,6 +36,12 @@ digraph graph_name {
   mailinglist [ label = "Mailing list" ];
   slack [ label = "Slack post" ];
   slackdm [ label = "Slack DM" ];
+
+  routing [ label = "Routing" ];
+  semantics [ label = "Semantics" ];
+  context [ label = "Context" ];
+  stateful [ label = "Stateful" ];
+  stateless [ label = "Stateless" ];
 
   pubsub [ label = "Pub/Sub" ];
   unicast [ label = "Unicast" ];
@@ -45,8 +57,6 @@ digraph graph_name {
   pdu -> packet;
 
   root -> comm;
-  comm -> comm_push;
-  comm -> comm_pull;
 
   comm -> model;
   model -> directto;
@@ -56,12 +66,19 @@ digraph graph_name {
   puton -> slack;
   puton -> mailinglist;
 
+  space -> id;
+  space -> locator;
+  id -> directto;
+  locator -> puton;
+
   comm -> pattern;
   pattern -> pubsub;
-  pattern -> unicast;
-  pattern -> mutlicast;
-  pattern -> broadcast;
-  pattern -> anycast;
+  pattern -> comm_push;
+  pattern -> comm_pull;
+  comm_push -> unicast;
+  comm_push -> mutlicast;
+  comm_push -> broadcast;
+  comm_push -> anycast;
 
 }
 
