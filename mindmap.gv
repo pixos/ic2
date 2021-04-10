@@ -20,6 +20,8 @@ digraph graph_name {
   cplane [ label = "Control plane" ];
   dplane [ label = "Data plane" ];
 
+  session [ label = "Session" ];
+
   policy [ label = "Policy" ];
   mechanism [ label = "Mechanism" ];
 
