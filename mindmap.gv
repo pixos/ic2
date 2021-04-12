@@ -1,0 +1,86 @@
+digraph graph_name {
+
+  root [ label = "Internet" ];
+  comm [ label = "Data communication" ];
+  comm_push [ label = "Push" ];
+  comm_pull [ label = "Pull" ];
+  file [ label = "File" ];
+  object [ label = "Object" ];
+  message [ label = "Message" ];
+  packet [ label = "Packet" ];
+
+  adu [ label = "Application Data Unit" ];
+  pdu [ label = "Protocol Data Unit" ];
+
+  space [ label = "Space" ];
+
+  id [ label = "ID" ];
+  locator [ label = "Locator" ];
+
+  cplane [ label = "Control plane" ];
+  dplane [ label = "Data plane" ];
+
+  session [ label = "Session" ];
+
+  policy [ label = "Policy" ];
+  mechanism [ label = "Mechanism" ];
+
+  authentication [ label = "Authentication" ];
+  authorization [ label = "Authorization" ];
+  accounting [ label = "Accounting" ];
+
+  model [ label = "Messaging model" ];
+  pattern [ label = "Communication pattern" ];
+  directto [ label = "direct-to" ];
+  puton [ label = "put-on" ];
+
+  email [ label = "E-mail" ];
+  mailinglist [ label = "Mailing list" ];
+  slack [ label = "Slack post" ];
+  slackdm [ label = "Slack DM" ];
+
+  routing [ label = "Routing" ];
+  semantics [ label = "Semantics" ];
+  context [ label = "Context" ];
+  stateful [ label = "Stateful" ];
+  stateless [ label = "Stateless" ];
+
+  pubsub [ label = "Pub/Sub" ];
+  unicast [ label = "Unicast" ];
+  multicast [ label = "Multicast" ];
+  broadcast [ label = "Broadcast" ];
+  anycast [ label = "Anycast" ];
+
+  root -> adu;
+  adu -> pdu;
+  adu -> file;
+  adu -> object;
+  adu -> message;
+  pdu -> packet;
+
+  root -> comm;
+
+  comm -> model;
+  model -> directto;
+  model -> puton;
+  directto -> email;
+  directto -> slackdm;
+  puton -> slack;
+  puton -> mailinglist;
+
+  space -> id;
+  space -> locator;
+  id -> directto;
+  locator -> puton;
+
+  comm -> pattern;
+  pattern -> pubsub;
+  pattern -> comm_push;
+  pattern -> comm_pull;
+  comm_push -> unicast;
+  comm_push -> mutlicast;
+  comm_push -> broadcast;
+  comm_push -> anycast;
+
+}
+
